@@ -1,24 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 
 namespace FacebookWP7
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        // Constructor
+        #region //--------- Public Constructors ---------//
+        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainPage" /> class.
+        /// </summary>
         public MainPage()
         {
             InitializeComponent();
         }
+        
+        #endregion
+        
+        #region //--------- Event Handlers --------------//
+        
+        /// <summary>
+        /// Called when [facebook login button click].
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="args">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
+        private void OnFacebookLoginButtonClick(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new Uri("/Pages/FacebookLoginPage.xaml", UriKind.Relative));
+        }
+    
+        #endregion
     }
 }
